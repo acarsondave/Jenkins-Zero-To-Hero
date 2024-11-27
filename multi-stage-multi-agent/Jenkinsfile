@@ -1,12 +1,13 @@
 pipeline {
   agent none
   stages {
-    stage('Back-end') {
+    stage('First-Script') {
       agent {
-        docker { image 'maven:3.8.1-adoptopenjdk-11' }
+        docker { image 'python:3' }
       }
       steps {
-        sh 'mvn --version'
+        sh 'python --version'
+        python3 --version
       }
     }
     stage('Front-end') {
